@@ -1,7 +1,7 @@
 'use client'
 
+import { PaginationControl } from "@/components/PaginationControl";
 import { useEffect, useState } from "react";
-import { PaginationControl } from "./PaginationControl";
 
 export function BlogList() {
     const [cursor, setCursor] = useState<string>();
