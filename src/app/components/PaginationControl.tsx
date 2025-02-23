@@ -21,14 +21,19 @@ export function PaginationControl({
     }
 
     const next = () => {
-        setNumberOfPages(numberOfPages + 1);
-        setFormerCursors([...formerCursors, cursor]);
+        if (cursor) {
+            setNumberOfPages(numberOfPages + 1);
+            setFormerCursors([...formerCursors, cursor]);
+        }
     }
+
+    const disabledNext = cursor === undefined;
+
     return (
         <div className="flex items-center gap-2">
             <button className={button} onClick={back}>前へ</button>
             <div>{numberOfPages}</div>
-            <button className={button} onClick={next}>次へ</button>
+            <button className={button} onClick={next} disabled={disabledNext}>次へ</button>
         </div>
     )
 }
