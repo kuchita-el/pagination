@@ -1,6 +1,6 @@
 'use client'
 
-import { PaginationControl } from "@/components/PaginationControl";
+import { MoyaPaginationControl } from "@/components/MoyaPaginationControl";
 import { useEffect, useState } from "react";
 
 export function BlogList() {
@@ -26,7 +26,7 @@ export function BlogList() {
     }, [formerCursors])
 
     return <>
-        <PaginationControl {...{ cursor, setCursor, formerCursors, setFormerCursors }}>
-        </PaginationControl>
+        <MoyaPaginationControl {...{ cursor, setCursor, formerCursors, setFormerCursors }}>
+        </MoyaPaginationControl>
     </>
 }
