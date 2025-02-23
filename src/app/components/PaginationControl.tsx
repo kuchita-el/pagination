@@ -27,11 +27,12 @@ export function PaginationControl({
         }
     }
 
+    const disabledBack = numberOfPages === 1;
     const disabledNext = cursor === undefined;
 
     return (
         <div className="flex items-center gap-2">
-            <button className={button} onClick={back}>前へ</button>
+            <button className={button} onClick={back} disabled={disabledBack}>前へ</button>
             <div>{numberOfPages}</div>
             <button className={button} onClick={next} disabled={disabledNext}>次へ</button>
         </div>
