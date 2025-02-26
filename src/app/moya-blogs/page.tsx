@@ -9,11 +9,11 @@ export function BlogList() {
 
     const fetchBlogs = async (cursor?: string) => {
         const response = await fetch(`/api/blogs?cursor=${cursor}`)
-        const blogs = await response.json() as { id: string }[]
-        return {
-            blogs: blogs,
-            cursor: blogs[blogs.length - 1].id
+        const data = await response.json() as {
+            blogs: { id: string }[],
+            cursor?: string;
         }
+        return data
     }
 
     useEffect(() => {
